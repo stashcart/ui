@@ -31,29 +31,16 @@ export const Header: FunctionComponent = () => {
         <Avatar sx={{ bgcolor: grey[200], mr: 2 }}>
           <Image src={ShoppingCart} width={30} height={30} alt="logo" />
         </Avatar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+        <Typography variant="h6" sx={{ flexGrow: 1 }}>
           Stashcart
         </Typography>
         <div>
-          <IconButton
-            size="large"
-            aria-label="account of current user"
-            aria-controls="menu-appbar"
-            aria-haspopup="true"
-            onClick={handleMenu}
-            color="inherit"
-          >
+          <IconButton onClick={handleMenu}>
             <AccountCircle />
           </IconButton>
           <Menu
-            id="menu-appbar"
             anchorEl={menuElement}
             anchorOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
-            }}
-            keepMounted
-            transformOrigin={{
               vertical: 'top',
               horizontal: 'right',
             }}
