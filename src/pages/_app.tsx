@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import type { AppProps } from 'next/app';
-import { ThemeProvider } from '@mui/material';
-import { theme } from './theme';
+import { CssBaseline, ThemeProvider } from '@mui/material';
+import { theme } from '../theme';
 
 const App: FunctionComponent<AppProps> = ({
   Component,
@@ -9,6 +9,7 @@ const App: FunctionComponent<AppProps> = ({
 }: AppProps) => {
   return (
     <ThemeProvider theme={theme}>
+      <CssBaseline />
       <Component {...pageProps} />
     </ThemeProvider>
   );
