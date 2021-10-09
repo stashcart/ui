@@ -1,8 +1,9 @@
 import type { NextPage } from 'next';
-import { Button } from '@mui/material';
+import React from 'react';
+import { Header } from 'containers/Header/Header';
 
 const Home: NextPage = () => {
-  return <Button>Hello world!</Button>;
+  return <Header />;
 };
 
 export default Home;
