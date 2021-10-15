@@ -1,6 +1,6 @@
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from 'utils/make-styles';
 
-export const useStyles = makeStyles({
+export const styles = makeStyles({
   tabBar: {
     backgroundColor: 'primary.light',
     borderTopRightRadius: 4,
@@ -9,7 +9,7 @@ export const useStyles = makeStyles({
   tabPanel: {
     borderTopLeftRadius: 0,
     borderTopRightRadius: 0,
-    padding: '1.5rem',
+    padding: '1rem',
     backgroundColor: 'background.paper',
     height: '80vh',
   },
