@@ -7,4 +7,10 @@ module.exports = withImages({
   images: {
     disableStaticImages: true,
   },
+  rewrites: () => [
+    {
+      source: '/graphql',
+      destination: process.env.API_URL,
+    },
+  ],
 });
