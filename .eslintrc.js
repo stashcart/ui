@@ -73,5 +73,6 @@ module.exports = {
         custom: 'ignore',
       },
     ],
+    'react/require-default-props': OFF,
   },
 };
