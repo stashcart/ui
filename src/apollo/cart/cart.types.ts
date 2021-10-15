@@ -3,7 +3,7 @@ export interface CartPreview {
   title: string;
   owner: Owner;
   storeName: string;
-  idAutoApproved: boolean;
+  isAutoApproveEnabled: boolean;
 }
 
 export interface Owner {
