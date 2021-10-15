@@ -11,6 +11,7 @@ import {
 import { AccountCircle } from '@mui/icons-material';
 import Image from 'next/image';
 import { grey } from '@mui/material/colors';
+import Link from 'next/link';
 
 import ShoppingCart from 'assets/icons/shopping-cart.png';
 
@@ -28,12 +29,16 @@ export const Header: FunctionComponent = () => {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Avatar sx={{ bgcolor: grey[200], mr: 2 }}>
-          <Image src={ShoppingCart} width={30} height={30} alt="logo" />
-        </Avatar>
-        <Typography variant="h6" sx={{ flexGrow: 1 }}>
-          Stashcart
-        </Typography>
+        <Link href="/" passHref>
+          <a style={{ display: 'flex', marginRight: 'auto' }}>
+            <Avatar sx={{ bgcolor: grey[200], mr: 2 }}>
+              <Image src={ShoppingCart} width={30} height={30} alt="logo" />
+            </Avatar>
+            <Typography variant="h6" alignSelf="center">
+              Stashcart
+            </Typography>
+          </a>
+        </Link>
         <div>
           <IconButton onClick={handleMenu}>
             <AccountCircle />

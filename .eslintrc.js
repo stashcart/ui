@@ -74,5 +74,8 @@ module.exports = {
       },
     ],
     'react/require-default-props': OFF,
+
+    // Because of next.js `Link`
+    'jsx-a11y/anchor-is-valid': OFF,
   },
 };
