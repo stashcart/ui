@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { useCarts } from 'apollo/cart/hooks/use-carts.hook';
-import { TabPanelProps } from 'components/TabPanel/TabPanel';
-import { CartPreview } from 'components/CartPreview/CartPreview';
+import { TabPanelProps } from '../TabPanel/TabPanel';
+import { CartPreview } from '../CartPreview/CartPreview';
 
 export const AllCartsPanel: FunctionComponent<TabPanelProps> = () => {
   const { data } = useCarts({});

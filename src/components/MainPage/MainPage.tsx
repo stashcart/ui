@@ -1,8 +1,8 @@
 import { FunctionComponent, useState } from 'react';
 import { AppBar, Box, Card, Container, Tab, Tabs } from '@mui/material';
 import SwipeableViews from 'react-swipeable-views';
-import { AllCartsPanel } from 'components/CartTabPanels/AllCartsPanel';
-import { MyCartsPanel } from 'components/CartTabPanels/MyCartsPanel';
+import { AllCartsPanel } from 'components/MainPage/CartTabPanels/AllCartsPanel';
+import { MyCartsPanel } from 'components/MainPage/CartTabPanels/MyCartsPanel';
 import { styles } from './MainPage.styles';
 
 export const MainPage: FunctionComponent = () => {
