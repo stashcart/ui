@@ -1,16 +1,8 @@
-import {
-  Card,
-  CardActionArea,
-  Typography,
-  Box,
-  Link,
-  Icon,
-  Tooltip,
-} from '@mui/material';
+import { Typography, Box, Link, Icon, Tooltip } from '@mui/material';
 import { CartPreview as CartPreviewTypes } from 'apollo/cart/types/cart-preview.interface';
 import Check from '@mui/icons-material/Check';
 import React, { FunctionComponent } from 'react';
-import { styles } from './CartPreview.styles';
+import { CartPreviewContainer, CartPreviewWrapper } from './CartPreview.styles';
 
 interface Props {
   cartPreview: CartPreviewTypes;
@@ -20,10 +12,8 @@ export const CartPreview: FunctionComponent<Props> = ({ cartPreview }) => {
   const { owner, title, storeName, isAutoApproveEnabled } = cartPreview;
 
   return (
-    <CardActionArea
-      sx={{ mb: 3, borderTopLeftRadius: 4, borderTopRightRadius: 4 }}
-    >
-      <Card sx={styles.cartPreview}>
+    <CartPreviewWrapper>
+      <CartPreviewContainer>
         <Typography variant="h3" flex={2}>
           {storeName}
         </Typography>
@@ -49,7 +39,7 @@ export const CartPreview: FunctionComponent<Props> = ({ cartPreview }) => {
             </Tooltip>
           )}
         </Box>
-      </Card>
-    </CardActionArea>
+      </CartPreviewContainer>
+    </CartPreviewWrapper>
   );
 };
