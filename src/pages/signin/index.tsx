@@ -8,6 +8,7 @@ import {
 } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { NextPage } from 'next';
+import { GoogleButton } from 'components/_common/GoogleButton/GoogleButton';
 
 const SignIn: NextPage = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -59,6 +60,7 @@ const SignIn: NextPage = () => {
           >
             Sign In
           </Button>
+          <GoogleButton />
         </Box>
       </Box>
     </Container>
