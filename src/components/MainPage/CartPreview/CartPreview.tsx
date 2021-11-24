@@ -7,7 +7,7 @@ import {
   Icon,
   Tooltip,
 } from '@mui/material';
-import { CartPreview as CartPreviewTypes } from 'apollo/cart/cart.types';
+import { CartPreview as CartPreviewTypes } from 'apollo/cart/types/cart-preview.interface';
 import Check from '@mui/icons-material/Check';
 import React, { FunctionComponent } from 'react';
 import { styles } from './CartPreview.styles';

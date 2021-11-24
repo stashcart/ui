@@ -1,6 +1,6 @@
 import { QueryResult, useQuery } from '@apollo/client';
 import gql from 'graphql-tag';
-import { CartPreview } from './cart.types';
+import { CartPreview } from '../types/cart-preview.interface';
 
 const query = gql`
   query Carts($ownerId: String) {
