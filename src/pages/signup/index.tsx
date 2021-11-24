@@ -1,6 +1,5 @@
 import {
   Container,
-  CssBaseline,
   Box,
   Avatar,
   Typography,
@@ -9,6 +8,7 @@ import {
 } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { NextPage } from 'next';
+import { GoogleButton } from 'components/_common/GoogleButton/GoogleButton';
 
 const SignUp: NextPage = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -23,7 +23,6 @@ const SignUp: NextPage = () => {
 
   return (
     <Container component="main" maxWidth="xs">
-      <CssBaseline />
       <Box
         sx={{
           marginTop: 8,
@@ -67,6 +66,7 @@ const SignUp: NextPage = () => {
           >
             Sign Up
           </Button>
+          <GoogleButton />
         </Box>
       </Box>
     </Container>
