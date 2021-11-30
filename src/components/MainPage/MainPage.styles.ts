@@ -1,16 +1,16 @@
 import { AppBar, Card, styled } from '@mui/material';
 import { theme } from 'theme';
 
-export const TabBar = styled(AppBar)`
-  background-color: ${theme.palette.primary.light};
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-`;
+export const TabBar = styled(AppBar)({
+  backgroundColor: theme.palette.primary.light,
+  borderTopLeftRadius: 4,
+  borderTopRightRadius: 4,
+});
 
-export const TabPanel = styled(Card)`
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  padding: 2.5rem;
-  background-color: ${theme.palette.background.paper};
-  height: 80vh;
-`;
+export const TabPanel = styled(Card)({
+  borderTopLeftRadius: 0,
+  borderTopRightRadius: 0,
+  padding: '2.5rem',
+  backgroundColor: theme.palette.background.paper,
+  height: '80vh',
+});
