@@ -1,8 +1,9 @@
-import { FunctionComponent, useState } from 'react';
-import { Box, Container, Tab, Tabs } from '@mui/material';
-import SwipeableViews from 'react-swipeable-views';
+import { Box, Tab, Tabs } from '@mui/material';
 import { AllCartsPanel } from 'components/MainPage/CartTabPanels/AllCartsPanel';
 import { MyCartsPanel } from 'components/MainPage/CartTabPanels/MyCartsPanel';
+import { MainContainer } from 'components/_common/MainContainer/MainContainer.styles';
+import { FunctionComponent, useState } from 'react';
+import SwipeableViews from 'react-swipeable-views';
 import { TabBar, TabPanel } from './MainPage.styles';
 
 export const MainPage: FunctionComponent = () => {
@@ -18,28 +19,26 @@ export const MainPage: FunctionComponent = () => {
 
   return (
     <Box>
-      <Container>
-        <Box pt={2}>
-          <TabBar position="static">
-            <Tabs
-              value={tabNumber}
-              onChange={handleChange}
-              indicatorColor="secondary"
-              textColor="inherit"
-              variant="fullWidth"
-            >
-              <Tab label="All carts" />
-              <Tab label="My carts" />
-            </Tabs>
-          </TabBar>
-          <TabPanel>
-            <SwipeableViews index={tabNumber} onChangeIndex={onChangeTab}>
-              <AllCartsPanel currentTabNumber={tabNumber} tabNumber={0} />
-              <MyCartsPanel currentTabNumber={tabNumber} tabNumber={1} />
-            </SwipeableViews>
-          </TabPanel>
-        </Box>
-      </Container>
+      <MainContainer>
+        <TabBar position="static">
+          <Tabs
+            value={tabNumber}
+            onChange={handleChange}
+            indicatorColor="secondary"
+            textColor="inherit"
+            variant="fullWidth"
+          >
+            <Tab label="All carts" />
+            <Tab label="My carts" />
+          </Tabs>
+        </TabBar>
+        <TabPanel>
+          <SwipeableViews index={tabNumber} onChangeIndex={onChangeTab}>
+            <AllCartsPanel currentTabNumber={tabNumber} tabNumber={0} />
+            <MyCartsPanel currentTabNumber={tabNumber} tabNumber={1} />
+          </SwipeableViews>
+        </TabPanel>
+      </MainContainer>
     </Box>
   );
 };
