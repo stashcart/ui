@@ -1,19 +1,20 @@
-import React, { FunctionComponent, useState } from 'react';
+import { AccountCircle } from '@mui/icons-material';
 import {
   AppBar,
   Avatar,
+  Divider,
   IconButton,
   Menu,
   MenuItem,
   Toolbar,
+  Tooltip,
   Typography,
 } from '@mui/material';
-import { AccountCircle } from '@mui/icons-material';
-import Image from 'next/image';
 import { grey } from '@mui/material/colors';
-import Link from 'next/link';
-
 import ShoppingCart from 'assets/icons/shopping-cart.png';
+import Image from 'next/image';
+import Link from 'next/link';
+import React, { FunctionComponent, useState } from 'react';
 
 export const Header: FunctionComponent = () => {
   const [menuElement, setMenuElement] = useState<null | HTMLElement>(null);
@@ -25,6 +26,10 @@ export const Header: FunctionComponent = () => {
   const onAnchorClose = () => {
     setMenuElement(null);
   };
+
+  const HeaderMenuItem: FunctionComponent = ({ children }) => (
+    <MenuItem onClick={onAnchorClose}>{children}</MenuItem>
+  );
 
   return (
     <AppBar position="static">
@@ -44,16 +49,28 @@ export const Header: FunctionComponent = () => {
             <AccountCircle />
           </IconButton>
           <Menu
+            PaperProps={{
+              sx: { width: '15rem' },
+            }}
             anchorEl={menuElement}
             anchorOrigin={{
-              vertical: 'top',
+              vertical: 'bottom',
               horizontal: 'right',
             }}
             open={Boolean(menuElement)}
             onClose={onAnchorClose}
           >
-            <MenuItem onClick={onAnchorClose}>Profile</MenuItem>
-            <MenuItem onClick={onAnchorClose}>Logout</MenuItem>
+            <Typography sx={{ padding: '6px 16px' }} noWrap>
+              Signed as{' '}
+              <Tooltip title="John Doe">
+                <b>John Doe</b>
+              </Tooltip>
+            </Typography>
+            <Divider sx={{ marginY: '8px' }} />
+            <HeaderMenuItem>
+              <Link href="/profile">Profile</Link>
+            </HeaderMenuItem>
+            <HeaderMenuItem>Logout</HeaderMenuItem>
           </Menu>
         </div>
       </Toolbar>
